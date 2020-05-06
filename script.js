@@ -21,12 +21,27 @@ nextBtn.addEventListener('click', ()=>{
    counter++;
    containerSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
 
- });
+});
 
- prevBtn.addEventListener('click', ()=>{
+prevBtn.addEventListener('click', ()=>{
     containerSlide.style.transition = "transform 0.4s ease-in-out";
     counter--;
     containerSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
  
-  });
+});
  
+//Looping the images
+
+containerSlide.addEventListener('transitionend', ()=> {
+    if(containerImages[counter].id === 'lastClone') {
+        containerSlide.style.transition = "none";
+        counter = containerImages.length -2;
+        containerSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    }
+
+    if(containerImages[counter].id === 'firstClone') {
+        containerSlide.style.transition = "none";
+        counter = containerImages.length - counter;
+        containerSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    }
+});
