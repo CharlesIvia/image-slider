@@ -1,5 +1,4 @@
 const containerSlide = document.querySelector(".container-slide");
-console.log(containerSlide);
 const containerImages = document.querySelectorAll(".container-slide img");
 
 //Buttons
@@ -17,13 +16,15 @@ containerSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
 //Button Listeners
 
 nextBtn.addEventListener('click', ()=>{
-   containerSlide.style.transition = "transform 0.4s ease-in-out";
+    if(counter >= containerImages.length -1) return;
+   containerSlide.style.transition = "transform 0.5s ease-in-out";
    counter++;
    containerSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
 
 });
 
 prevBtn.addEventListener('click', ()=>{
+    if(counter  <= 0) return;
     containerSlide.style.transition = "transform 0.4s ease-in-out";
     counter--;
     containerSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
