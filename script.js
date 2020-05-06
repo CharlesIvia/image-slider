@@ -23,3 +23,10 @@ nextBtn.addEventListener('click', ()=>{
 
  });
 
+ prevBtn.addEventListener('click', ()=>{
+    containerSlide.style.transition = "transform 0.4s ease-in-out";
+    counter--;
+    containerSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+ 
+  });
+ 
