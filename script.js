@@ -16,7 +16,7 @@ containerSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
 //Button Listeners
 
 nextBtn.addEventListener('click', ()=>{
-    if(counter >= containerImages.length -1) return;
+   if(counter >= containerImages.length -1) return;
    containerSlide.style.transition = "transform 0.5s ease-in-out";
    counter++;
    containerSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
@@ -28,7 +28,7 @@ prevBtn.addEventListener('click', ()=>{
     containerSlide.style.transition = "transform 0.4s ease-in-out";
     counter--;
     containerSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
- 
+    
 });
  
 //Looping the images
